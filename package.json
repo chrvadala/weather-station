@@ -1,0 +1,9 @@
+{
+  "name": "weather-sensors",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "dbus-next": "^0.8.1"
+  }
+}
