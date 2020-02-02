@@ -51,6 +51,11 @@ connected
 disconnected
 ```
 
+## DEBUG
+```sh
+DEBUG=weather-station node example.js
+```
+
 ## Changelog
 - **0.x** - WIP - Work In Progress
 
