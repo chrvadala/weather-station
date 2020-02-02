@@ -1,8 +1,14 @@
+const EventEmitter = require('events');
+const {upperFirst} = require("./utils");
+const {lowerFirst} = require("./utils");
+const debug = require('debug')('weather-sensors')
+
 const IF_PROPS = 'org.freedesktop.DBus.Properties'
 const BLUEZ_NAME = 'org.bluez'
 
-module.exports = class BluezDBus {
+module.exports = class BluezDBus extends EventEmitter {
   constructor(bus, path, iface) {
+    super()
     this.bus = bus
     this.path = path
     this.iface = iface
@@ -18,17 +24,20 @@ module.exports = class BluezDBus {
     const propsProxy = await objectProxy.getInterface(IF_PROPS)
 
     propsProxy.on('PropertiesChanged', (iface, changedProps, invalidated) => {
-      console.debug(iface, changedProps, invalidated)
+      debug('changed props on %s -> %o', iface, changedProps)
       if (iface !== this.iface) return
       for (const propKey in changedProps) {
-        this.props[propKey] = changedProps[propKey].value
+        const lowerPropKey = lowerFirst(propKey)
+        const value = changedProps[propKey].value
+        this.props[lowerPropKey] = value
+        this.emit(`prop:${lowerPropKey}`, value)
       }
     })
     const props = await propsProxy.GetAll(this.iface)
     for (const propKey in props) {
-      this.props[propKey] = props[propKey].value
+      this.props[lowerFirst(propKey)] = props[propKey].value
     }
-    // console.debug(this.props)
+    debug('found props %o', props)
 
     this.objectProxy = objectProxy
     this.ifaceProxy = ifaceProxy
@@ -36,6 +45,6 @@ module.exports = class BluezDBus {
   }
 
   async call(method, ...args) {
-    return this.ifaceProxy[method]()
+    return this.ifaceProxy[upperFirst(method)]()
   }
 }

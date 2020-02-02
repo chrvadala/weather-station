@@ -9,7 +9,7 @@ module.exports = class Service extends BluezDBus {
   }
 
   get primary() {
-    return this.props.Primary
+    return this.props.primary
   }
 
   get UUID() {
@@ -18,7 +18,7 @@ module.exports = class Service extends BluezDBus {
 
   async characteristics() {
     const charObjs = this.objectProxy.nodes
-      .map(path => new Characteristic(this.bus, path))
+      .map(path => new Characteristic(this, this.bus, path))
 
     for (const obj of charObjs) {
       await obj.init()

@@ -28,6 +28,10 @@ module.exports = class Bluetooth {
     await o.init()
     return o
   }
+
+  async destroy(){
+    await this.bus.disconnect()
+  }
 }
 
 

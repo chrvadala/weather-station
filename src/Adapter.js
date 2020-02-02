@@ -1,8 +1,8 @@
 const BluezDBus = require("./BluezDBus")
 const Device = require("./Device")
 const IF_ADAPTER = 'org.bluez.Adapter1'
-
-const pause = ms => new Promise(resolve => setTimeout(resolve, ms))
+const {pause} = require('./utils')
+const debug = require('debug')('weather-sensors')
 
 module.exports = class Adapter extends BluezDBus {
   constructor(adapter, bus, path) {
@@ -10,35 +10,35 @@ module.exports = class Adapter extends BluezDBus {
   }
 
   get address() {
-    return this.props.Address
+    return this.props.address
   }
 
   get addressType() {
-    return this.props.AddressType
+    return this.props.addressType
   }
 
   get name() {
-    return this.props.Name
+    return this.props.name
   }
 
   get alias() {
-    return this.props.Alias
+    return this.props.alias
   }
 
   get powered() {
-    return this.props.Powered
+    return this.props.powered
   }
 
   get discoverable() {
-    return this.props.Discoverable
+    return this.props.discoverable
   }
 
   get discoverableTimeout() {
-    return this.props.DiscoverableTimeout
+    return this.props.discoverableTimeout
   }
 
   get discovering() {
-    return this.props.Discovering
+    return this.props.discovering
   }
 
   get UUIDs() {
@@ -46,11 +46,11 @@ module.exports = class Adapter extends BluezDBus {
   }
 
   async startDiscovery() {
-    await this.call('StartDiscovery')
+    await this.call('startDiscovery')
   }
 
   async stopDiscovery() {
-    await this.call('StopDiscovery')
+    await this.call('stopDiscovery')
   }
 
   async devices() {
@@ -65,7 +65,7 @@ module.exports = class Adapter extends BluezDBus {
     let found = false
     while (!found) {
       const devices = await this.devices()
-      // console.debug(devices)
+      debug('devices found %o', devices)
       found = devices.includes(device)
       await pause(1000)
     }
