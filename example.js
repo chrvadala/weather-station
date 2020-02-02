@@ -1,4 +1,3 @@
-const Bluetooth = require('./src/Bluetooth')
 const WeatherStation = require('./src/WeatherStation')
 const {pause} = require('./src/utils')
 const ADDRESS = 'D8:B6:F5:80:A1:C4'
