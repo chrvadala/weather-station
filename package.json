@@ -1,6 +1,6 @@
 {
   "name": "weather-station",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "./src/WeatherStation.js",
   "license": "MIT",
   "dependencies": {
