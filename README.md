@@ -7,13 +7,12 @@ Connector able to download weather data from an Oregon Scientific EMR211X statio
 [![Donate](https://img.shields.io/badge/donate-PayPal-green.svg)](https://www.paypal.me/chrvadala/25)
 
 
-# Install
-### YARN
+## Install
 ```sh
 yarn add weather-station
 ```
 
-# Example
+## Example
 ````javascript
 const WeatherStation = require('weather-station')
 const ADDRESS = '00:00:00:00:00:00' //bluetooth low energy address
@@ -58,7 +57,7 @@ disconnected
 ## Contributors
 - [chrvadala](https://github.com/chrvadala) (author)
 
-# References
+## References
 - https://git.kernel.org/pub/scm/bluetooth/bluez.git/tree/doc/gatt-api.txt
 - https://www.instructables.com/id/Connect-Raspberry-Pi-to-Oregon-Scientific-BLE-Weat/
 
