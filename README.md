@@ -25,6 +25,6 @@ main()
   .catch(console.error)
 ````
 
-# Docs
-https://git.kernel.org/pub/scm/bluetooth/bluez.git/tree/doc/gatt-api.txt
-https://www.instructables.com/id/Connect-Raspberry-Pi-to-Oregon-Scientific-BLE-Weat/
+# References
+- https://git.kernel.org/pub/scm/bluetooth/bluez.git/tree/doc/gatt-api.txt
+- https://www.instructables.com/id/Connect-Raspberry-Pi-to-Oregon-Scientific-BLE-Weat/
