@@ -2,7 +2,7 @@ const BluezDBus = require("./BluezDBus")
 const Device = require("./Device")
 const IF_ADAPTER = 'org.bluez.Adapter1'
 const {pause} = require('./utils')
-const debug = require('debug')('weather-sensors')
+const debug = require('debug')('weather-station')
 
 module.exports = class Adapter extends BluezDBus {
   constructor(adapter, bus, path) {

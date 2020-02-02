@@ -1,9 +1,16 @@
 {
-  "name": "weather-sensors",
+  "name": "weather-station",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "./src/WeatherStation.js",
   "license": "MIT",
   "dependencies": {
-    "dbus-next": "^0.8.1"
-  }
+    "dbus-next": "^0.8.1",
+    "debug": "^4.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrvadala/weather-station.git"
+  },
+  "author": "chrvadala",
+  "homepage": "https://github.com/chrvadala/weather-station#readme"
 }

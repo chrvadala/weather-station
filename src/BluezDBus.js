@@ -1,7 +1,7 @@
 const EventEmitter = require('events');
 const {upperFirst} = require("./utils");
 const {lowerFirst} = require("./utils");
-const debug = require('debug')('weather-sensors')
+const debug = require('debug')('weather-station')
 
 const IF_PROPS = 'org.freedesktop.DBus.Properties'
 const BLUEZ_NAME = 'org.bluez'

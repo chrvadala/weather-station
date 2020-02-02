@@ -1,7 +1,7 @@
 const EventEmitter = require('events');
 const Bluetooth = require('./Bluetooth')
 const {buildIndex} = require('./utils')
-const debug = require('debug')('weather-sensors')
+const debug = require('debug')('weather-station')
 
 const BLEWS_ATTR_DEVICE_INFORMATION = '74e78e02-c6a4-11e2-b7a9-0002a5d5c51b'
 const BLEWS_ATTR_INDOOR_AND_CH1_TO_3_TH_DATA = '74e78e10-c6a4-11e2-b7a9-0002a5d5c51b'
