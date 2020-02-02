@@ -1,4 +1,4 @@
-# weather-station (WIP)
+# weather-station
 Connector able to download weather data from an Oregon Scientific EMR211X station, leveraging on Bluetooth Low Energy connection
 
 [![chrvadala](https://img.shields.io/badge/website-chrvadala-orange.svg)](https://chrvadala.github.io)
