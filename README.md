@@ -66,3 +66,19 @@ DEBUG=weather-station node example.js
 - https://git.kernel.org/pub/scm/bluetooth/bluez.git/tree/doc/gatt-api.txt
 - https://www.instructables.com/id/Connect-Raspberry-Pi-to-Oregon-Scientific-BLE-Weat/
 
+## Troubleshooting
+### Permission Denied
+Adds the following file into `/etc/dbus-1/system.d/bluetooth.conf`
+
+```
+<policy user="<insert-user-here>">
+  <allow own="org.bluez"/>
+  <allow send_destination="org.bluez"/>
+  <allow send_interface="org.bluez.GattCharacteristic1"/>
+  <allow send_interface="org.bluez.GattDescriptor1"/>
+  <allow send_interface="org.freedesktop.DBus.ObjectManager"/>
+  <allow send_interface="org.freedesktop.DBus.Properties"/>
+</policy>
+```
+
+Then `sudo systemctl restart bluetooth`
