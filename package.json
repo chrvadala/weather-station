@@ -1,7 +1,7 @@
 {
   "name": "weather-station",
   "description": "Connector able to download weather data from an Oregon Scientific EMR211X station, leveraging on Bluetooth Low Energy connection",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "main": "./src/WeatherStation.js",
   "license": "MIT",
   "dependencies": {
