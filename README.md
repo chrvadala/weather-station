@@ -15,23 +15,25 @@ yarn add weather-station
 ## Example
 ````javascript
 const WeatherStation = require('weather-station')
-const ADDRESS = '00:00:00:00:00:00' //bluetooth low energy address
+const ADAPTER = 'hci0'
+const ADDRESS = '00:00:00:00:00:00' //Oregon Scientific EMR211X Bluetooth address
 
 async function main() {
-  const station = new WeatherStation(ADDRESS)
+  const station = new WeatherStation(ADAPTER, ADDRESS)
 
   station.on('data', console.log)
   station.on('connect', () => console.log('connected'))
   station.on('disconnect', () => console.log('disconnected'))
 
   await station.bind()
-  await new Promise(resolve => setTimeout(resolve, ms));
+  await new Promise(resolve => setTimeout(resolve, 5000))
   await station.unbind()
 }
 
 main()
   .then(console.log)
   .catch(console.error)
+}
 ````
 
 ```sh
