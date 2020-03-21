@@ -1,19 +1,17 @@
 const WeatherStation = require('./src/WeatherStation')
-const {pause} = require('./src/utils')
+const ADAPTER = 'hci0'
 const ADDRESS = 'D8:B6:F5:80:A1:C4'
 
 async function main() {
-  const station = new WeatherStation(ADDRESS)
+  const station = new WeatherStation(ADAPTER, ADDRESS)
 
   station.on('data', console.log)
   station.on('connect', () => console.log('connected'))
   station.on('disconnect', () => console.log('disconnected'))
 
   await station.bind()
-  await pause(15000)
+  await new Promise(resolve => setTimeout(resolve, 5000))
   await station.unbind()
-  //
-  // await station.destroy()
 }
 
 

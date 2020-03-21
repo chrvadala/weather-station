@@ -1,16 +1,19 @@
 {
   "name": "weather-station",
+  "description": "Connector able to download weather data from an Oregon Scientific EMR211X station, leveraging on Bluetooth Low Energy connection",
   "version": "0.0.2",
   "main": "./src/WeatherStation.js",
   "license": "MIT",
   "dependencies": {
-    "dbus-next": "^0.8.1",
-    "debug": "^4.1.1"
+    "debug": "^4.1.1",
+    "node-ble": "^0.0.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chrvadala/weather-station.git"
-  },
+  "keywords": [
+    "bluetooth-low-energy",
+    "EMR211X",
+    "oregon-scientific"
+  ],
+  "repository": "https://github.com/chrvadala/weather-station.git",
   "author": "chrvadala",
   "homepage": "https://github.com/chrvadala/weather-station#readme"
 }
