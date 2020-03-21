@@ -6,13 +6,14 @@ Connector able to download weather data from an Oregon Scientific EMR211X statio
 [![Downloads](https://img.shields.io/npm/dm/weather-station.svg)](https://www.npmjs.com/package/weather-station)
 [![Donate](https://img.shields.io/badge/donate-PayPal-green.svg)](https://www.paypal.me/chrvadala/25)
 
-
 ## Install
 ```sh
 yarn add weather-station
 ```
 
 ## Example
+Before running the following script, configure your permissions https://github.com/chrvadala/node-ble#provide-permissions
+
 ````javascript
 const WeatherStation = require('weather-station')
 const ADAPTER = 'hci0'
@@ -59,28 +60,12 @@ DEBUG=weather-station node example.js
 ```
 
 ## Changelog
-- **0.x** - WIP - Work In Progress
+- **0.x** - Beta version
+- **1.0** - First official version
 
 ## Contributors
 - [chrvadala](https://github.com/chrvadala) (author)
 
 ## References
-- https://git.kernel.org/pub/scm/bluetooth/bluez.git/tree/doc/gatt-api.txt
 - https://www.instructables.com/id/Connect-Raspberry-Pi-to-Oregon-Scientific-BLE-Weat/
-
-## Troubleshooting
-### Permission Denied
-Adds the following file into `/etc/dbus-1/system.d/bluetooth.conf`
-
-```
-<policy user="<insert-user-here>">
-  <allow own="org.bluez"/>
-  <allow send_destination="org.bluez"/>
-  <allow send_interface="org.bluez.GattCharacteristic1"/>
-  <allow send_interface="org.bluez.GattDescriptor1"/>
-  <allow send_interface="org.freedesktop.DBus.ObjectManager"/>
-  <allow send_interface="org.freedesktop.DBus.Properties"/>
-</policy>
-```
-
-Then `sudo systemctl restart bluetooth`
+- https://github.com/chrvadala/node-ble#references
