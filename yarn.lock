@@ -102,10 +102,10 @@ nan@^2.12.1:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.0.tgz#7818f722027b2459a86f0295d434d1fc2336c52c"
   integrity sha512-INOFj37C7k3AfaNTtX8RhsTw7qRy7eLET14cROi9+5HAVbbHuIWUHEauBv5qT4Av2tWasiTY1Jw6puUNqRJXQg==
 
-node-ble@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/node-ble/-/node-ble-0.0.2.tgz#7a8bbe7ec9b56fc0be6ea0ee9ef743bc8ee53316"
-  integrity sha512-pvM6PE2sNWZ5k3vYbBZ5cfg3bXK4wKv5YNlZuuUH4BM/lClXRkPUebSx9rr0/T/pOkN066nP9ZUhbvGcV5hrMA==
+node-ble@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/node-ble/-/node-ble-1.0.0.tgz#9d76a5c6e5536a6fc175078a933d6f4eb036e129"
+  integrity sha512-wyBf+izCCV71QdCK3AaMmvlD/vMlqL4rVeFkJBW2zHm8SopePLfZ3e3/c9WhJSyNBu8R+i709DafkkBXxongag==
   dependencies:
     dbus-next "^0.8.2"
 
